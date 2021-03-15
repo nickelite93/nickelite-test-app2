@@ -108,7 +108,7 @@ def create_app(test_config=None):
       abort(400)
 
   @app.route("/characters/<int:character_id>", methods=['DELETE'])
-  # @requires_auth('delete:characters')
+  @requires_auth('delete:characters')
   def delete_character(character_id):
     character =  Character.query.filter_by(id=character_id).first()
 
