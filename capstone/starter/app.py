@@ -109,7 +109,7 @@ def create_app(test_config=None):
 
   @app.route("/characters/<int:character_id>", methods=['DELETE'])
   @requires_auth('delete:characters')
-  def delete_character(character_id):
+  def delete_character(jwt, character_id):
     character =  Character.query.filter_by(id=character_id).first()
 
     if character is None:
