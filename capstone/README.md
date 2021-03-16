@@ -1,12 +1,12 @@
-Motivation for project
+**Motivation for project**
 
 This API provides a catalogue system for game collections. It allows a user to manage records of games and the characters that are in them. 
 
-Project Dependencies
+**Project Dependencies**
 
 The list of project dependencies is included in the requirements.txt file. 
 
-PostgresSQL
+**PostgresSQL**
 
 This application is configured to run with PostgresSQL as the database. The following section of the application located in models.py file will need to be updated:
 
@@ -16,7 +16,7 @@ def setup_db(app):
     db.app = app
     db.init_app(app)
 
-Auth0
+**Auth0**
 
 This applicaiton is configured to use Auth0 for managing permissions. The following section of the auth.py file will need to be conifugred to work with your Auth0 account:
 
@@ -26,7 +26,7 @@ API_AUDIENCE = '{yourAPITitle}'
 
 Information on how to configure this for your application can be found here: https://auth0.com
 
-Roles & Permissions
+**Roles & Permissions**
 
 There are two Roles configured for this app with the following permissions. 
 
@@ -44,7 +44,7 @@ There are two Roles configured for this app with the following permissions.
     - patch:games
 
 
-Endpoints API 
+**Endpoints API **
 
 GET '/games'
 GET '/characters'
