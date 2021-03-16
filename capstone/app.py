@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import json
+from flask_migrate import Migrate
 
 from models import setup_db, Character, Game, db
 from auth.auth import AuthError, requires_auth
