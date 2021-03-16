@@ -3,14 +3,17 @@ from sqlalchemy import Column, String, Integer, Enum
 from flask_sqlalchemy import SQLAlchemy
 import json
 from flask_migrate import Migrate
+# from app import app
 
 database_name = "capstone"
 database_path = os.environ.get('DATABASE_URL')
 
 db = SQLAlchemy()
 
+# setup_db(app)
 
-def setup_db(app, database_path=database_path):
+
+def setup_db(app):
     # app.config["SQLALCHEMY_DATABASE_URI"] = database_path
     # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config.from_object('config')
@@ -18,7 +21,6 @@ def setup_db(app, database_path=database_path):
     db.init_app(app)
     migrate = Migrate(app, db)
 
-setup_db(app)
 
 
 class Game(db.Model):
